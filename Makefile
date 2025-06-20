@@ -6,7 +6,7 @@
 #    By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 15:05:53 by lbenatar          #+#    #+#              #
-#    Updated: 2025/02/25 14:37:51 by prambaud         ###   ########.fr        #
+#    Updated: 2025/06/20 17:53:45 by prambaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,9 +59,9 @@ SRC	= ./src/parsing/fill_lst_token.c \
 	./src/parsing_brackets/parsing_dollars_without_brackets.c \
 	./src/parsing_brackets/replace_status.c \
 	./src/parsing_brackets/replace_status2.c \
-	./src/parsing_champetre/une_line_dans_la_nature.c \
-	./src/parsing_champetre/une_line_dans_la_nature_utils.c \
-	./src/parsing_champetre/two_pipe_one_pipe.c 
+	./src/parsing_utils/pipe_management.c \
+	./src/parsing_utils/one_pipe_management.c \
+	./src/parsing_utils/one_pipe_management2.c 
 
 LIBFT	= ./libft/libft.a
 
