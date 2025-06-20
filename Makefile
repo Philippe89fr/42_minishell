@@ -6,7 +6,7 @@
 #    By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 15:05:53 by lbenatar          #+#    #+#              #
-#    Updated: 2025/06/20 17:53:45 by prambaud         ###   ########.fr        #
+#    Updated: 2025/06/20 18:00:59 by prambaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC	= ./src/parsing/fill_lst_token.c \
 	./src/error_and_free/error_management2.c \
 	./src/error_and_free/error_management3.c \
 	./src/error_and_free/mini_liberators.c \
-	./src/sigaux.c \
+	./src/signaux.c \
 	./src/main_bis.c \
 	./src/parsing_brackets/double_quote_management2.c \
 	./src/parsing_brackets/double_quote_management.c \
