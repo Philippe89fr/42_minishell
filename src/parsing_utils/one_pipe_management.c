@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   une_line_dans_la_nature_utils.c                    :+:      :+:    :+:   */
+/*   one_pipe_management.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenatar <lbenatar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:36:53 by prambaud          #+#    #+#             */
-/*   Updated: 2025/01/31 12:04:11 by lbenatar         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:02:12 by prambaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*add_space(char *line, int i)
 -> un ou plusieurs & -> ciao
 */
 
-int	trois_trucs_et_cest_foutu(char *line, char truc)
+int	removeWhenTree(char *line, char truc)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ int	trois_trucs_et_cest_foutu(char *line, char truc)
 	return (0);
 }
 
-int	il_y_a_et_ciao(char *line)
+int	charFinder(char *line)
 {
 	int	i;
 
@@ -72,7 +72,7 @@ int	il_y_a_et_ciao(char *line)
 	return (0);
 }
 
-int	null_apres_un_truc(t_token *token)
+int	null_apres_un_token(t_token *token)
 {
 	if (token->type == INPUT && !token->next)
 		return (ft_printf("minishell: syntax error near unexpected token `<'\n"),

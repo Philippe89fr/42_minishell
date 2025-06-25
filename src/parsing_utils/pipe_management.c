@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   two_pipe_one_pipe.c                                :+:      :+:    :+:   */
+/*   pipe_management.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenatar <lbenatar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:36:53 by prambaud          #+#    #+#             */
-/*   Updated: 2025/01/31 12:01:19 by lbenatar         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:59:57 by prambaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_in_brackets(char *line, int k)
 	return (1);
 }
 
-char	*une_pipe_bien_entouree(char *line)
+char	*suroundedPipe(char *line)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ char	*une_pipe_bien_entouree(char *line)
 	return (line);
 }
 
-char	*des_machins_bien_entoures2(char *line)
+char	*nonPipeSurounded2(char *line)
 {
 	int	i;
 
@@ -91,7 +91,7 @@ char	*des_machins_bien_entoures2(char *line)
 	return (line);
 }
 
-char	*des_machins_bien_entoures(char *line)
+char	*nonPipeSurounded(char *line)
 {
 	int	i;
 
@@ -121,13 +121,13 @@ char	*des_machins_bien_entoures(char *line)
 
 char	*une_histoire_de_pipe(char *line)
 {
-	line = une_pipe_bien_entouree(line);
+	line = suroundedPipe(line);
 	if (!line)
 		return (NULL);
-	line = des_machins_bien_entoures(line);
+	line = nonPipeSurounded(line);
 	if (!line)
 		return (NULL);
-	line = des_machins_bien_entoures2(line);
+	line = nonPipeSurounded(line);
 	if (!line)
 		return (NULL);
 	return (line);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenatar <lbenatar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:00:46 by lbenatar          #+#    #+#             */
-/*   Updated: 2025/02/13 15:12:21 by lbenatar         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:03:44 by prambaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,7 +208,7 @@ char				*replace_status(char *line, t_pipex *pipex);
 int					is_in_brackets(char *line, int k);
 char				*parsing_champetre(char *line, t_pipex *pipex);
 char				**ft_strdup_table2(char **env);
-void				les_espaces_cest_pas_cool(char *line);
+void				removeSpace(char *line);
 void				open_files(t_pipex *pipex);
 int					infile_outfile_count(t_token *lst_token, int indice);
 int					ft_lstnew_cmd_init(t_cmd *new, t_token *lst_token);
@@ -222,9 +222,9 @@ char				*ft_copy_start(char *s, int len);
 char				*ft_rejoin_parts(char *first_part, char *error,
 						char *end_part);
 int					check_linked_token(t_token *token);
-int					null_apres_un_truc(t_token *token);
-int					trois_trucs_et_cest_foutu(char *line, char truc);
-int					il_y_a_et_ciao(char *line);
+int					null_apres_un_token(t_token *token);
+int					removeWhenTree(char *line, char truc);
+int					charFinder(char *line);
 char				*add_space(char *line, int i);
 void				ft_cd1(t_pipex *pipex);
 void				ft_cd2(t_pipex *pipex);

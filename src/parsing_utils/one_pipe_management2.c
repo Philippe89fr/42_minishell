@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   une_line_dans_la_nature.c                          :+:      :+:    :+:   */
+/*   one_pipe_management2.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenatar <lbenatar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:36:53 by prambaud          #+#    #+#             */
-/*   Updated: 2025/02/04 15:01:46 by lbenatar         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:03:13 by prambaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	deux_pipes_sont_pas_mieux_quun(char *line)
+int	twoPipeCheck(char *line)
 {
 	int	i;
 
@@ -43,13 +43,13 @@ int	verif_line_caracteres(char *line, t_pipex *pipex)
 	int	i;
 
 	i = -1;
-	if (trois_trucs_et_cest_foutu(line, '>'))
+	if (removeWhenTree(line, '>'))
 		i = ft_printf("minishell: syntax error near unexpected token `>'\n");
-	else if (trois_trucs_et_cest_foutu(line, '<'))
+	else if (removeWhenTree(line, '<'))
 		i = ft_printf("minishell: syntax error near unexpected token `<'\n");
-	else if (trois_trucs_et_cest_foutu(line, '|'))
+	else if (removeWhenTree(line, '|'))
 		i = ft_printf("minishell: syntax error near unexpected token `|'\n");
-	else if (il_y_a_et_ciao(line))
+	else if (charFinder(line))
 	{
 		i = ft_printf("minishell: syntax error,");
 		ft_printf("our minishell does not understand `&'\n");
@@ -70,7 +70,7 @@ int	verif_tokens(t_token *lst_token, t_pipex *pipex)
 	current = lst_token;
 	while (current)
 	{
-		if (check_linked_token(current) || null_apres_un_truc(current))
+		if (check_linked_token(current) || null_apres_un_token(current))
 		{
 			pipex->status = 2;
 			pipex->status_check = 1;
@@ -81,7 +81,7 @@ int	verif_tokens(t_token *lst_token, t_pipex *pipex)
 	return (0);
 }
 
-void	les_espaces_cest_pas_cool(char *line)
+void	removeSpace(char *line)
 {
 	int	i;
 
@@ -104,7 +104,7 @@ char	*parsing_champetre(char *line, t_pipex *pipex)
 		return (NULL);
 	if (verif_line_caracteres(line, pipex))
 		return (free(line), NULL);
-	les_espaces_cest_pas_cool(line);
+	removeSpace(line);
 	tab_line = ft_split(line, 25);
 	if (!tab_line)
 		return (malloc_fail(), free(line), NULL);
@@ -116,7 +116,7 @@ char	*parsing_champetre(char *line, t_pipex *pipex)
 	if (verif_tokens(lst_token, pipex))
 		return (free(line), ft_lstclear_token(&lst_token),
 			ft_liberator_max(tab_line), NULL);
-	deux_pipes_sont_pas_mieux_quun(line);
+	twoPipeCheck(line);
 	ft_lstclear_token(&lst_token);
 	ft_liberator_max(tab_line);
 	return (line);

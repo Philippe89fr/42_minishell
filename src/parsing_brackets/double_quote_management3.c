@@ -6,7 +6,7 @@
 /*   By: prambaud <prambaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:08:47 by lbenatar          #+#    #+#             */
-/*   Updated: 2025/02/04 14:06:30 by prambaud         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:03:36 by prambaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ char	*search_env_get_variable(int i, int j, t_pipex *pipex, int format)
 		variable = fixe_variable(variable);
 		if (!variable)
 			return (NULL);
-		les_espaces_cest_pas_cool(variable);
+		removeSpace(variable);
 	}
 	return (variable);
 }
