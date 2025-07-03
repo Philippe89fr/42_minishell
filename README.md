@@ -19,7 +19,7 @@ Part of 42 Common Core.
 # Main Technologies / Skills Used:
 
 - **Programming Languages:** C
-- **Process Management:** fork(), wait(), waitpid(), execve() for command execution
+- **Process Management:** fork(), waitpid(), execve() for command execution
 - **Inter-Process Communication:** Pipes for connecting command input/output
 - **File Descriptors:** dup(), dup2() for input/output redirection
 - **Signal Handling:** sigaction(), signal() for interactive shell behavior (Ctrl-C, Ctrl-D, Ctrl-)
